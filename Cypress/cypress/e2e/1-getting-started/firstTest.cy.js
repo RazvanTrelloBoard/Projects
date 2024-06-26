@@ -8,11 +8,9 @@ describe('WebSite Test', () => {
     })
         it('Visit the website and login with valid credentials', () => {
     
-    //         cy.visit('/')
-            cy.get('#user-name').should('be.visible').type('standard_user')
-            cy.get('#password').should('be.visible').type('secret_sauce')
-            cy.get('[data-test="login-button"]').should('be.visible').click()
-            cy.url().should('include','/inventory.html')
+
+            cy.login('standard_user', 'secret_sauce');
+          });
             cy.contains('Products')
         })
         it('Visit the website and login with invalid credentials', () => {
@@ -24,4 +22,3 @@ describe('WebSite Test', () => {
 
     })
     
-    })
