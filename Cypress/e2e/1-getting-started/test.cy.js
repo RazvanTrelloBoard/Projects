@@ -1,7 +1,7 @@
 
 describe('Website Test', () => {
     let username, password, baduser; 
-  
+  //
     before(() => {
       cy.fixture('example').then((cred) => {
         username = cred.username;
