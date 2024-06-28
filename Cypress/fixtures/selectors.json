@@ -1,0 +1,11 @@
+{
+  "username": "#user-name",
+  "password": "#password",
+  "loginButton": "[data-test='login-button']",
+  "inventoryItem": ".inventory_item",
+  "addToCartButton": ".btn_inventory",
+  "shoppingCartBadge": ".shopping_cart_badge",
+  "cartList": ".cart_list",
+  "cartQuantity": ".cart_quantity",
+  "productsText": "Products"
+}
