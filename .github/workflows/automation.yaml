@@ -25,7 +25,6 @@ jobs:
 
       - name: Install Dependencies
         run: npm ci
-        working-directory: /Users/rmatache/Projects/Projects-1/Cypress
 
       # - name: Install Cypress Binary
       #   run: npx cypress install
