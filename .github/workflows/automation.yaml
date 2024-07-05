@@ -28,4 +28,4 @@ jobs:
         run: npx cypress install
 
       - name: Run Cypress Test
-        run: npx cypress run --config-file cypress.chrome.local.config.js --browser chrome
+        run: npx cypress run --browser chrome
