@@ -3,8 +3,7 @@ const { defineConfig } = require('cypress');
 module.exports = defineConfig({
   reporter: 'cypress-mochawesome-reporter',
   e2e: {
-    supportFile: 'cypress/support/e2e.js',
-    specPattern: 'e2e/**/*.cy.{js,jsx,ts,tsx}',
+    supportFile: 'cypress/support/e2e.{js,jsx,ts,tsx}',
     setupNodeEvents(on, config) {
 
     },
