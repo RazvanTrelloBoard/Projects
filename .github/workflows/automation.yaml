@@ -27,6 +27,6 @@ jobs:
 
       - name: Run Cypress Test
         run: |
-          npx cypress run  --config-file=cypress.config.js --browser chrome
+          npx cypress run  --config-file=cypress.chrome.local.config.js --browser chrome
         env:
           CYPRESS_INSTALL_BINARY: 0  
