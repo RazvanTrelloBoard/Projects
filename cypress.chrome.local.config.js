@@ -4,7 +4,7 @@ module.exports = defineConfig({
   reporter: 'cypress-mochawesome-reporter',
   e2e: {
     supportFile: 'support/e2e.js',
-    specfile 
+    
     setupNodeEvents(on, config) {
 
     },
