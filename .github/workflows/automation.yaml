@@ -22,14 +22,17 @@ jobs:
         with:
           node-version: 'latest'
 
+      - name: Create Working Directory
+        run: mkdir -p /temporarytesting/cypress
+
       - name: Install Dependencies
         run: npm install
-        working-directory: /tmp/temporary
+        working-directory: /temporarytesting/cypress
 
       - name: Install Cypress Binary
         run: npx cypress install
-        working-directory: /tmp/temporary
+        working-directory: /temporarytesting/cypress
 
       - name: Run Cypress Test
-        run: npx cypress open --config-file cypress.chrome.local.config.js --browser chrome
-        working-directory: /tmp/temporary
+        run: npx cypress run --config-file cypress.chrome.local.config.js --browser chrome
+        working-directory: /temporarytesting/cypress
