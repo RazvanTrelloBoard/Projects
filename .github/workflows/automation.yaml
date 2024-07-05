@@ -24,7 +24,7 @@ jobs:
           node-version: 'latest'
 
       - name: Install Dependencies
-        run: npm install
+        run: npm ci
 
       # - name: Install Cypress Binary
       #   run: npx cypress install
