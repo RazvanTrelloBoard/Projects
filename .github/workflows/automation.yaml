@@ -17,22 +17,22 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Create Working Directory
+        run: mkdir -p /temporarytesting/cypress
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 'latest'
 
-      - name: Create Working Directory
-        run: mkdir -p /temporarytesting/cypress
-
       - name: Install Dependencies
-        run: npm install
         working-directory: /temporarytesting/cypress
+        run: npm install
 
       - name: Install Cypress Binary
-        run: npx cypress install
         working-directory: /temporarytesting/cypress
+        run: npx cypress install
 
       - name: Run Cypress Test
-        run: npx cypress run --config-file cypress.chrome.local.config.js --browser chrome
         working-directory: /temporarytesting/cypress
+        run: npx cypress run --config-file cypress.chrome.local.config.js --browser chrome
