@@ -28,3 +28,4 @@ jobs:
 
       - name: Run Cypress Test
         run: npx cypress run --config-file cypress.chrome.local.config.js --browser chrome --spec "Cypress/e2e/1-getting-started/reqres.cy.js"
+        working-directory: /cypress/
