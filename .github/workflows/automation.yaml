@@ -27,5 +27,18 @@ jobs:
       - name: Install Cypress Binary
         run: npx cypress install
 
+      - name: Log File Structure
+        run: ls -R cypress
+
+      - name: Check Cypress Version
+        run: npx cypress --version
+
+      - name: Verify Support File Exists
+        run: |
+          if [ ! -f cypress/support/e2e.js ]; then
+            echo "Support file not found!"
+            exit 1
+          fi
+
       - name: Run Cypress Test
-        run: npx cypress run --browser chrome
+        run: npx cypress run --config-file cypress.chrome.local.config.js --browser chrome
