@@ -4,10 +4,6 @@ module.exports = defineConfig({
   reporter: 'cypress-mochawesome-reporter',
   e2e: {
     supportFile: 'support/e2e.js',
-    
-    setupNodeEvents(on, config) {
-
-    },
     "chromeWebSecurity": false,
     baseUrl: 'https://www.saucedemo.com', 
     env: {
