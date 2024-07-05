@@ -24,9 +24,12 @@ jobs:
 
       - name: Install Dependencies
         run: npm install
+        working-directory: /tmp/temporary
 
       - name: Install Cypress Binary
         run: npx cypress install
+        working-directory: /tmp/temporary
 
       - name: Run Cypress Test
         run: npx cypress open --config-file cypress.chrome.local.config.js --browser chrome
+        working-directory: /tmp/temporary
