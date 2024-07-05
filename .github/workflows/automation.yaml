@@ -23,11 +23,11 @@ jobs:
 
       - name: Install Dependencies
         run: npm install
-        working-directory: Projects/Cypress/
+        working-directory: /Cypress/
 
       # - name: Install Cypress Binary
       #   run: npx cypress install
 
       - name: Run Cypress Test
         run: npx cypress run --browser chrome
-        working-directory: Projects/Cypress/
+        working-directory: /Cypress/
