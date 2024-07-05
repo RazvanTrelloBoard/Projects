@@ -35,7 +35,7 @@ jobs:
 
       - name: Verify Support File Exists
         run: |
-          if [ ! -f cypress/support/e2e.js ]; then
+          if [ ! -f Cypress/support/e2e.js ]; then
             echo "Support file not found!"
             exit 1
           fi
