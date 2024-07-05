@@ -26,5 +26,5 @@ jobs:
         run: npm ci
 
       - name: Run Cypress Test
-        run: npx cypress run --config-file cypress.chrome.local.config.js --browser chrome
+        run: npx cypress run
         working-directory: /
