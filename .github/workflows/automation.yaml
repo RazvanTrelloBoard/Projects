@@ -32,5 +32,8 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
+      - name: Install Cypress Binary
+        run: npx cypress install
+
       - name: Run Cypress Test
         run: npx cypress open --config-file cypress.chrome.local.config.js --browser chrome
