@@ -10,13 +10,6 @@ jobs:
   cypress-test:
     runs-on: ubuntu-latest
     environment: automation-test
-    strategy:
-      fail-fast: false
-      matrix:
-        script: ['chrome']
-        include:
-          - script: 'chrome'
-            browser: 'chrome'
     container:
       image: cypress/browsers:latest
 
@@ -32,6 +25,8 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
+      - name: Install Cypress Binary
+        run: npx cypress install
+
       - name: Run Cypress Test
         run: npx cypress open --config-file cypress.chrome.local.config.js --browser chrome
-
