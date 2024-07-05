@@ -23,11 +23,9 @@ jobs:
           node-version: 'latest'
 
       - name: Install Dependencies
-        working-directory: /Cypress
         run: npm install
 
       - name: Install Cypress Binary
-        working-directory: Cypress
         run: npx cypress install
 
       - name: Run Cypress Test
