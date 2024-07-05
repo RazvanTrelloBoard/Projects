@@ -1,0 +1,37 @@
+name: Cypress Tests
+
+on:
+  push:
+    branches:
+      - Empty
+  workflow_dispatch:
+
+jobs:
+  cypress-test:
+    runs-on: ubuntu-latest
+    environment: automation-test
+    strategy:
+      fail-fast: false
+      matrix:
+        script: ['chrome']
+        include:
+          - script: 'chrome'
+            browser: 'chrome'
+    container:
+      image: cypress/browsers:latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 'latest'
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Run Cypress Test
+        run: npx cypress open --config-file cypress.chrome.local.config.js --browser chrome
+
