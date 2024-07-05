@@ -9,6 +9,14 @@ on:
 jobs:
   cypress-test:
     runs-on: ubuntu-latest
+    environment: automation-test
+    strategy:
+      fail-fast: false
+      matrix:
+        script: ['chrome']
+        include:
+          - script: 'chrome'
+            browser: 'chrome'
     container:
       image: cypress/browsers:latest
 
@@ -21,20 +29,8 @@ jobs:
         with:
           node-version: 'latest'
 
-      - name: Log File Structure
-        run: ls -R Projects/Cypress
-
       - name: Install Dependencies
         run: npm install
-        working-directory: Projects/Cypress
-
-      - name: Verify Support File Exists
-        run: |
-          if [ ! -f Projects/Cypress/support/e2e.js ]; then
-            echo "Support file not found!"
-            exit 1
-          fi
 
       - name: Run Cypress Test
-        run: npx cypress run --browser chrome
-        working-directory: Projects/Cypress
+        run: npx cypress open --config-file cypress.chrome.local.config.js --browser chrome
