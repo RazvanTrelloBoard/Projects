@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "cypress:open:chrome:local": "npx cypress open --config-file cypress.chrome.local.config.js --browser chrome",
+    "cypress:run:chrome:local": "npx cypress run --config-file cypress.chrome.local.config.js --browser chrome",
     "cypress:open:firefox:local": "npx cypress open --config-file cypress.firefox.local.config.js --browser firefox"
   },
   "author": "",
