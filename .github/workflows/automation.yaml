@@ -9,7 +9,6 @@ on:
 jobs:
   cypress-test:
     runs-on: ubuntu-latest
-    environment: automation-test
     container:
       image: cypress/browsers:latest
 
@@ -20,7 +19,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '14'
+          node-version: 'latest'
 
       - name: Install Dependencies
         run: npm ci
