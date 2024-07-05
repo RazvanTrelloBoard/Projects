@@ -22,13 +22,10 @@ jobs:
         with:
           node-version: 'latest'
 
-      - name: Create Working Directory
-        run: mkdir -p /cypress/tmp
-
       - name: Install Dependencies
         run: npm ci
-        working-directory: /cypress/tmp
+        working-directory: /
 
       - name: Run Cypress Test
         run: npx cypress run --config-file cypress.chrome.local.config.js --browser chrome
-        working-directory: /cypress/tmp
+        working-directory: /
