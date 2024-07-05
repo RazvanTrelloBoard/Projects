@@ -23,22 +23,11 @@ jobs:
 
       - name: Install Dependencies
         run: npm install
+        working-directory: Projects/Cypress/
 
-      - name: Install Cypress Binary
-        run: npx cypress install
-
-      - name: Log File Structure
-        run: ls -R cypress
-
-      - name: Check Cypress Version
-        run: npx cypress --version
-
-      - name: Verify Support File Exists
-        run: |
-          if [ ! -f Cypress/support/e2e.js ]; then
-            echo "Support file not found!"
-            exit 1
-          fi
+      # - name: Install Cypress Binary
+      #   run: npx cypress install
 
       - name: Run Cypress Test
-        run: npx cypress run --config-file cypress.chrome.local.config.js --browser chrome
+        run: npx cypress run --browser chrome
+        working-directory: Projects/Cypress/
