@@ -1,0 +1,181 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 5,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-07-05T08:14:18.585Z",
+    "end": "2024-07-05T08:14:24.783Z",
+    "duration": 6198,
+    "testsRegistered": 5,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "4477a1a6-d919-4dfb-b9fc-07c4dbdf9e01",
+      "title": "",
+      "fullFile": "cypress/e2e/1-getting-started/test.cy.js",
+      "file": "cypress/e2e/1-getting-started/test.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "90edbfb6-021a-497f-9294-dbcec0883131",
+          "title": "Website Test",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Visit the website and login with valid credentials",
+              "fullTitle": "Website Test Visit the website and login with valid credentials",
+              "timedOut": null,
+              "duration": 1522,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const username = Cypress.env('username');\nconst password = Cypress.env('password');\ncy.login(username, password);",
+              "err": {},
+              "uuid": "43ee95be-910a-47c8-8ec6-cc92d5cf3dec",
+              "parentUUID": "90edbfb6-021a-497f-9294-dbcec0883131",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Visit the website and login with invalid credentials",
+              "fullTitle": "Website Test Visit the website and login with invalid credentials",
+              "timedOut": null,
+              "duration": 1850,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const baduser = Cypress.env('baduser');\nconst password = Cypress.env('password');\ncy.badlogin(baduser, password);",
+              "err": {},
+              "uuid": "90695a3f-84b6-4a3a-bb78-8185548aa20e",
+              "parentUUID": "90edbfb6-021a-497f-9294-dbcec0883131",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Searches for product",
+              "fullTitle": "Website Test Searches for product",
+              "timedOut": null,
+              "duration": 799,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const username = Cypress.env('username');\nconst password = Cypress.env('password');\ncy.login(username, password);\ncy.searchproduct();\ncy.get('.inventory_item_name').contains('Backpack').should('exist');",
+              "err": {},
+              "uuid": "7ccfd7ce-4c0b-44b5-9a61-5adbf31d153d",
+              "parentUUID": "90edbfb6-021a-497f-9294-dbcec0883131",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Adds to cart product",
+              "fullTitle": "Website Test Adds to cart product",
+              "timedOut": null,
+              "duration": 891,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const username = Cypress.env('username');\nconst password = Cypress.env('password');\ncy.login(username, password);\ncy.searchproduct();\ncy.addtocart();",
+              "err": {},
+              "uuid": "cf8b7981-06b5-42ab-a227-2b499364fe82",
+              "parentUUID": "90edbfb6-021a-497f-9294-dbcec0883131",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Check the cart",
+              "fullTitle": "Website Test Check the cart",
+              "timedOut": null,
+              "duration": 997,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const username = Cypress.env('username');\nconst password = Cypress.env('password');\ncy.login(username, password);\ncy.searchproduct();\ncy.addtocart();\ncy.checkcart();",
+              "err": {},
+              "uuid": "6577ca54-b418-439e-bc09-2ca2e9fcb1b3",
+              "parentUUID": "90edbfb6-021a-497f-9294-dbcec0883131",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "43ee95be-910a-47c8-8ec6-cc92d5cf3dec",
+            "90695a3f-84b6-4a3a-bb78-8185548aa20e",
+            "7ccfd7ce-4c0b-44b5-9a61-5adbf31d153d",
+            "cf8b7981-06b5-42ab-a227-2b499364fe82",
+            "6577ca54-b418-439e-bc09-2ca2e9fcb1b3"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 6059,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/reports/html/.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

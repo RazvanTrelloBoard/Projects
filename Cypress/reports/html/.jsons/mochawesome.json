@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-07-05T08:14:16.647Z",
+    "end": "2024-07-05T08:14:16.836Z",
+    "duration": 189,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "ba6afd7f-1872-4003-913e-ec8959b83180",
+      "title": "",
+      "fullFile": "cypress/e2e/1-getting-started/reqres.cy.js",
+      "file": "cypress/e2e/1-getting-started/reqres.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "f1e99dfc-2c97-4e80-bdc9-516ceab8ca05",
+          "title": "Reqres API tests",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should get the list of users and check data for user with ID 10",
+              "fullTitle": "Reqres API tests should get the list of users and check data for user with ID 10",
+              "timedOut": null,
+              "duration": 156,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const datedeverificat = {\n  id: 10,\n  email: \"byron.fields@reqres.in\",\n  first_name: \"Byron\",\n  last_name: \"Fields\"\n};\ncy.request('GET', 'https://reqres.in/api/users?page=2').then(response => {\n  expect(response.status).to.eq(200);\n  const user = response.body.data.find(user => user.id === datedeverificat.id);\n  expect(user).to.exist;\n  expect(user.email).to.eq(datedeverificat.email);\n  expect(user.first_name).to.eq(datedeverificat.first_name);\n  expect(user.last_name).to.eq(datedeverificat.last_name);\n});",
+              "err": {},
+              "uuid": "33be5873-7391-4705-ba9b-6f272f66aefb",
+              "parentUUID": "f1e99dfc-2c97-4e80-bdc9-516ceab8ca05",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "33be5873-7391-4705-ba9b-6f272f66aefb"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 156,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/reports/html/.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

@@ -23,35 +23,45 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
-
+//
+// Load selectors from fixtures.json
+// Load selectors from fixtures.json
 Cypress.Commands.add('login', (username, password) => {
-  cy.get('#user-name').should('be.visible').type(username);
-  cy.get('#password').should('be.visible').type(password);
-    cy.get('[data-test="login-button"]').should('be.visible').click();
+  cy.fixture('selectors').then((selectors) => {
+    cy.get(selectors.username).should('be.visible').type(username);
+    cy.get(selectors.password).should('be.visible').type(password);
+    cy.get(selectors.loginButton).should('be.visible').click();
     cy.url().should('include', '/inventory.html');
   });
+});
 
-  Cypress.Commands.add('badlogin', (baduser, password) => {
-    cy.get('#user-name').should('be.visible').type(baduser);
-    cy.get('#password').should('be.visible').type(password);
-    cy.get('[data-test="login-button"]').should('be.visible').click();
-    cy.wait(1000)
-    cy.get('[data-test="login-button"]').should('be.visible')
-    
+Cypress.Commands.add('badlogin', (baduser, password) => {
+  cy.fixture('selectors').then((selectors) => {
+    cy.get(selectors.username).should('be.visible').type(baduser);
+    cy.get(selectors.password).should('be.visible').type(password);
+    cy.get(selectors.loginButton).should('be.visible').click();
+    cy.wait(1000);
+    cy.get(selectors.loginButton).should('be.visible');
   });
+});
 
-  Cypress.Commands.add('searchproduct', () => {
-    cy.contains('Products')
-  })
-
-  Cypress.Commands.add('addtocart', () => {
-    cy.get('.inventory_item').first()
-    cy.get('.btn_inventory').contains('Add to cart').click();
-
-  })
-
-  Cypress.Commands.add('checkcart', () => {
-    cy.get('.shopping_cart_badge').should('contain', '1').click();
-    cy.get('.cart_list').should('have.length.at.least', 1);
-    cy.get('.cart_quantity').should('have.text', '1');
+Cypress.Commands.add('searchproduct', () => {
+  cy.fixture('selectors').then((selectors) => {
+    cy.contains(selectors.productsText);
   });
+});
+
+Cypress.Commands.add('addtocart', () => {
+  cy.fixture('selectors').then((selectors) => {
+    cy.get(selectors.inventoryItem).first();
+    cy.get(selectors.addToCartButton).contains('Add to cart').click();
+  });
+});
+
+Cypress.Commands.add('checkcart', () => {
+  cy.fixture('selectors').then((selectors) => {
+    cy.get(selectors.shoppingCartBadge).should('contain', '1').click();
+    cy.get(selectors.cartList).should('have.length.at.least', 1);
+    cy.get(selectors.cartQuantity).should('have.text', '1');
+  });
+});

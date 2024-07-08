@@ -4,11 +4,15 @@
   "description": "Here you can find all the projects i have worked on in different programming language",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cypress:open:chrome:local": "npx cypress open --config-file cypress.chrome.local.config.js --browser chrome",
+    "cypress:run:chrome:local": "npx cypress run --config-file cypress.chrome.local.config.js --browser chrome",
+    "cypress:open:firefox:local": "npx cypress open --config-file cypress.firefox.local.config.js --browser firefox"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^13.12.0"
+    "cypress": "^13.12.0",
+    "cypress-mochawesome-reporter": "^3.8.2"
   }
 }
